@@ -23,6 +23,15 @@ jobs:
         run: npm run lint:ts
       - name: Run styles lint and format check
         run: npm run lint:css
+  whatsup_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "whatsup"
+        run: echo "Hello $FIRST_NAME $MIDDLE_NAME $LAST_NAME, today is Monday!"
+        env:
+          FIRST_NAME: Sofie
+          MIDDLE_NAME: Inger-Ane
+          LAST_NAME: Solveig
   deploy:
     needs: build
     runs-on: ubuntu-latest
