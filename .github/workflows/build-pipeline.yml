@@ -32,6 +32,13 @@ jobs:
           FIRST_NAME: Sofie
           MIDDLE_NAME: Inger-Ane
           LAST_NAME: Solveig
+  secret_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "secret"
+        run: echo "Hello $SECRET"
+        env:
+          SECRET: ${{secrets.PASSWORD}} 
   deploy:
     needs: build
     runs-on: ubuntu-latest
